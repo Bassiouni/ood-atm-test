@@ -1,0 +1,26 @@
+{
+  "database": [
+    {
+      "account details": {
+        "cash": 0,
+        "gender": "male",
+        "name": "Mohamed Moshrif"
+      },
+      "card type": 1,
+      "end date": "6/23",
+      "password": 1234,
+      "serial number": 1234567890123456
+    },
+    {
+      "account details": {
+        "cash": 1000,
+        "gender": "female",
+        "name": "Menna Ali"
+      },
+      "card type": 2,
+      "end date": "11/22",
+      "password": 1224,
+      "serial number": 5012345678901234
+    }
+  ]
+}
