@@ -21,6 +21,8 @@ public:
 
   inline Json::Value &getAccountInfo() const override;
 
+  void greetings();
+
 private:
   int index;
 };

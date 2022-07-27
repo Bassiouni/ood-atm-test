@@ -2,7 +2,7 @@
   "database": [
     {
       "account details": {
-        "cash": 0,
+        "cash": 4000,
         "gender": "male",
         "name": "Mohamed Moshrif"
       },
@@ -13,7 +13,7 @@
     },
     {
       "account details": {
-        "cash": 1000,
+        "cash": 2000,
         "gender": "female",
         "name": "Menna Ali"
       },

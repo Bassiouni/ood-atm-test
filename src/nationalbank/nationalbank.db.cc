@@ -2,7 +2,7 @@
 #include <fstream>
 #include <functional>
 
-#include <iostream> // TODO: replace with `ftxui` lib
+#include <iostream>
 
 #include "nationalbank.db.h"
 

@@ -1,1 +1,0 @@
-g++ -g -Wall -Wextra -x c++ -std=c++17 -ljsoncpp -Iinclude -I. -L. src/*.cc main.cc

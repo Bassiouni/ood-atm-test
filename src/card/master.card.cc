@@ -1,4 +1,4 @@
-#include "master.card.h"
+#include "card/master.card.h"
 #include "nationalbank.db.h"
 
 inline CardType MasterCard::cardType() const { return CardType::MasterCard; }
