@@ -38,4 +38,4 @@ g++ \
   src/*.cc src/**/*.cc;
 ```
 
-! Make sure to pass the /path/to/db.json as the first argument.
+! Make sure to pass the `/path/to/db.json` as the first argument.
