@@ -4,7 +4,7 @@ This project is inspired by <https://hackernoon.com/the-top-10-object-oriented-d
 
 ## Deps
 
-- jsoncpp <https://github.com/open-source-parsers/jsoncpp>
+- jsoncpp
 
 
 ## JSON File Structure

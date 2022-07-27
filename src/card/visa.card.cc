@@ -1,5 +1,5 @@
 #include "card/visa.card.h"
-#include "nationalbank.db.h"
+#include "bank.db.h"
 
 inline CardType VisaCard::cardType() const { return CardType::Visa; }
 
@@ -32,7 +32,6 @@ inline std::string VisaCard::getSerialNumber() const
 
 inline bool VisaCard::setSerialNumber(uint64_t &n)
 {
-  // TODO: Setter
   this->cardNumber = n;
   return true;
 }
@@ -44,7 +43,6 @@ inline uint16_t &VisaCard::getPinCodeSecret() const
 
 inline bool VisaCard::setPinCodeSecret(uint16_t &secretPin)
 {
-  // TODO: Setter
   this->passCode = secretPin;
   return true;
 }
@@ -56,7 +54,6 @@ inline std::string VisaCard::getEndDate() const
 
 inline bool VisaCard::setEndDate(std::string endDate)
 {
-  // TODO: Setter
   this->endDate = endDate;
   return true;
 }

@@ -4,19 +4,19 @@
 
 #include <iostream>
 
-#include "nationalbank.db.h"
+#include "bank.db.h"
 
-inline void NationalBankDB::setIndex(uint32_t &index)
+inline void BankDB::setIndex(uint32_t &index)
 {
   this->index = index;
 }
 
-inline uint32_t &NationalBankDB::getIndex() const
+inline uint32_t &BankDB::getIndex() const
 {
   return (uint32_t &)this->index;
 }
 
-bool NationalBankDB::validateCardInfo(ICard &card)
+bool BankDB::validateCardInfo(ICard &card)
 {
   this->openConnection(this->pathToDB);
   for (uint32_t i = 0; i < this->context["database"].size(); i++)
@@ -36,7 +36,7 @@ bool NationalBankDB::validateCardInfo(ICard &card)
   return this->isAuthenticated();
 }
 
-inline Json::Value &NationalBankDB::read(std::string key) const
+inline Json::Value &BankDB::read(std::string key) const
 {
   try
   {
@@ -62,18 +62,18 @@ bool run(std::function<void()> f)
   }
 }
 
-inline bool NationalBankDB::writeToContextObject(std::string key, Json::Value &value)
+inline bool BankDB::writeToContextObject(std::string key, Json::Value &value)
 {
   return run([this, key, value]()
              { this->context[std::string(key)] = value; });
 }
 
-inline bool NationalBankDB::writeToContextObject(std::string key, Json::Value &&value)
+inline bool BankDB::writeToContextObject(std::string key, Json::Value &&value)
 {
   return this->writeToContextObject(key, value);
 }
 
-inline bool NationalBankDB::writeToFile()
+inline bool BankDB::writeToFile()
 {
   return run([this]()
              {
@@ -83,7 +83,7 @@ inline bool NationalBankDB::writeToFile()
         f.close(); });
 }
 
-inline bool NationalBankDB::openConnection(std::string dbfile)
+inline bool BankDB::openConnection(std::string dbfile)
 {
   return run([this, dbfile]()
              {
@@ -93,23 +93,23 @@ inline bool NationalBankDB::openConnection(std::string dbfile)
                f.close(); });
 }
 
-inline bool NationalBankDB::closeConnection()
+inline bool BankDB::closeConnection()
 {
   return run([this]()
              { this->writeToFile(); });
 }
 
-inline bool NationalBankDB::isAuthenticated() const
+inline bool BankDB::isAuthenticated() const
 {
   return this->authenticated;
 }
 
-void NationalBankDB::createAccount()
+void BankDB::createAccount()
 {
   // TODO: impl
 }
 
-bool NationalBankDB::deleteAccount()
+bool BankDB::deleteAccount()
 {
   return this->context["database"].removeIndex(this->getIndex(), nullptr);
   // Json::Value new_items;

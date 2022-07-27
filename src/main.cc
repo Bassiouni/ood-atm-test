@@ -2,8 +2,8 @@
 
 #include "card/visa.card.h"
 #include "card/master.card.h"
-#include "nationalbank.atm.h"
-#include "nationalbank.db.h"
+#include "bank.atm.h"
+#include "bank.db.h"
 
 int main(int, char **argv)
 {
@@ -42,7 +42,7 @@ int main(int, char **argv)
   std::cout << "Password: ";
   std::cin >> passCode;
 
-  NationalBankATM nbAtm;
+  BankATM nbAtm;
   bool result;
   if (cardType == CardType::Visa)
   {
@@ -93,6 +93,12 @@ int main(int, char **argv)
       break;
     default:
       std::cerr << "\nInvalid Option\ntry again\n"
+                << std::endl;
+      std::cout << "What do you want to do?\n"
+                   "1. Show account cash\n"
+                   "2. Withdraw money\n"
+                   "3. Put money into your account\n"
+                   "(-1 to close the program)\n"
                 << std::endl;
     }
     std::cout << "Your choice: ";

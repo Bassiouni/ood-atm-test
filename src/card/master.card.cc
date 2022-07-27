@@ -1,5 +1,5 @@
 #include "card/master.card.h"
-#include "nationalbank.db.h"
+#include "bank.db.h"
 
 inline CardType MasterCard::cardType() const { return CardType::MasterCard; }
 
@@ -32,7 +32,6 @@ inline std::string MasterCard::getSerialNumber() const
 
 inline bool MasterCard::setSerialNumber(uint64_t &n)
 {
-    // TODO: Setter
     this->cardNumber = n;
     return true;
 }
@@ -44,7 +43,6 @@ inline uint16_t &MasterCard::getPinCodeSecret() const
 
 inline bool MasterCard::setPinCodeSecret(uint16_t &secretPin)
 {
-    // TODO: Setter
     this->passCode = secretPin;
     return true;
 }

@@ -4,10 +4,10 @@
 #include "interface/atm.interface.h"
 #include "interface/card.interface.h"
 
-class NationalBankATM : public IATM
+class BankATM : public IATM
 {
 public:
-  NationalBankATM() = default;
+  BankATM() = default;
 
   bool connectToDB(std::string db, ICard &card) override;
   bool connectToDB(std::string db, ICard &&card) override;

@@ -3,12 +3,12 @@
 
 #include "interface/database.interface.h"
 
-class NationalBankDB : public IDatabase
+class BankDB : public IDatabase
 {
 public:
   bool validateCardInfo(ICard &card) override;
 
-  inline Json::Value& read(std::string key) const override;
+  inline Json::Value &read(std::string key) const override;
   inline bool writeToContextObject(std::string key, Json::Value &value) override;
   inline bool writeToContextObject(std::string key, Json::Value &&value);
 
@@ -26,7 +26,7 @@ public:
   bool deleteAccount() override;
 
 protected:
-  NationalBankDB() = default;
+  BankDB() = default;
 
 private:
   std::string pathToDB = "";
@@ -35,20 +35,20 @@ private:
   uint32_t index;
 
 public: // impl Singleton
-  static NationalBankDB &instance()
+  static BankDB &instance()
   {
-    static NationalBankDB NationalBankDB;
-    return NationalBankDB;
+    static BankDB BankDB;
+    return BankDB;
   }
 
-  NationalBankDB(const NationalBankDB &) = delete;
-  NationalBankDB &operator=(const NationalBankDB &) = delete;
+  BankDB(const BankDB &) = delete;
+  BankDB &operator=(const BankDB &) = delete;
 
-  NationalBankDB(NationalBankDB &&) = delete;
-  NationalBankDB &operator=(NationalBankDB &&) = delete;
+  BankDB(BankDB &&) = delete;
+  BankDB &operator=(BankDB &&) = delete;
 
-  NationalBankDB(NationalBankDB &) = delete;
-  NationalBankDB &operator=(NationalBankDB &) = delete;
+  BankDB(BankDB &) = delete;
+  BankDB &operator=(BankDB &) = delete;
 };
 
 #endif // _BANK_DB_H_
