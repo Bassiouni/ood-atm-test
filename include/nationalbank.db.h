@@ -22,6 +22,9 @@ public:
   inline void setIndex(uint32_t &index) override;
   inline uint32_t &getIndex() const override;
 
+  void createAccount() override;
+  bool deleteAccount() override;
+
 protected:
   NationalBankDB() = default;
 

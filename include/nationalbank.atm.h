@@ -13,10 +13,13 @@ public:
   bool connectToDB(std::string db, ICard &&card) override;
 
   void displayInfo() override;
-  void withdraw(int& amount) override;
-  void withdraw(int&& amount) override;
+  void withdraw(int &amount) override;
+  void withdraw(int &&amount) override;
 
-  inline Json::Value& getAccountInfo() const override;
+  void addMoney(int &amount) override;
+  void addMoney(int &&amount) override;
+
+  inline Json::Value &getAccountInfo() const override;
 
 private:
   int index;

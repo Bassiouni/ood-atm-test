@@ -45,9 +45,13 @@ int main(int, char **argv)
   NationalBankATM nbAtm;
   bool result;
   if (cardType == CardType::Visa)
+  {
     result = nbAtm.connectToDB(dbfile, VisaCard(_16_digitNumber, passCode, endDate));
+  }
   else if (cardType == CardType::MasterCard)
+  {
     result = nbAtm.connectToDB(dbfile, MasterCard(_16_digitNumber, passCode, endDate));
+  }
 
   if (!result)
   {
@@ -63,7 +67,8 @@ int main(int, char **argv)
 
   nbAtm.withdraw(amount);
   std::cout << "How much do you wanna put? ";
-  
+  std::cin >> amount;
+  nbAtm.addMoney(amount);
 
   return 0;
 }

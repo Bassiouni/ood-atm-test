@@ -34,3 +34,13 @@ inline Json::Value& NationalBankATM::getAccountInfo() const
 {
   return NationalBankDB::instance().read("database")[NationalBankDB::instance().getIndex()]["account details"];
 }
+
+void NationalBankATM::addMoney(int&& amount)
+{
+  this->addMoney(amount);
+}
+
+void NationalBankATM::addMoney(int& amount)
+{
+  this->withdraw(-amount);
+}

@@ -13,7 +13,7 @@ inline void NationalBankDB::setIndex(uint32_t &index)
 
 inline uint32_t &NationalBankDB::getIndex() const
 {
-  return (uint32_t&)this->index;
+  return (uint32_t &)this->index;
 }
 
 bool NationalBankDB::validateCardInfo(ICard &card)
@@ -36,11 +36,11 @@ bool NationalBankDB::validateCardInfo(ICard &card)
   return this->isAuthenticated();
 }
 
-inline Json::Value& NationalBankDB::read(std::string key) const
+inline Json::Value &NationalBankDB::read(std::string key) const
 {
   try
   {
-    return (Json::Value&)this->context[key];
+    return (Json::Value &)this->context[key];
   }
   catch (const std::exception &e)
   {
@@ -102,4 +102,24 @@ inline bool NationalBankDB::closeConnection()
 inline bool NationalBankDB::isAuthenticated() const
 {
   return this->authenticated;
+}
+
+void NationalBankDB::createAccount()
+{
+  // TODO: impl
+}
+
+bool NationalBankDB::deleteAccount()
+{
+  return this->context["database"].removeIndex(this->getIndex(), nullptr);
+  // Json::Value new_items;
+  // int c = 0;
+  // for (int i = 0; i < items.size(); i++)
+  // {
+  //   if (items[i] != selected_item)
+  //   {
+  //     new_items[c] = items[i];
+  //     c++;
+  //   }
+  // }
 }

@@ -15,6 +15,9 @@ public:
   virtual void withdraw(int& amount) = 0;
   virtual void withdraw(int&& amount) = 0;
 
+  virtual void addMoney(int& amount) = 0;
+  virtual void addMoney(int&& amount) = 0;
+
   virtual inline Json::Value& getAccountInfo() const = 0;
 };
 

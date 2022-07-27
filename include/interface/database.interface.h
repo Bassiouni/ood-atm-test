@@ -21,6 +21,9 @@ public:
 
   virtual inline void setIndex(uint32_t &index) = 0;
   virtual inline uint32_t &getIndex() const = 0;
+
+  virtual void createAccount() = 0;
+  virtual bool deleteAccount() = 0;
 };
 
 #endif // _IDB_H_
